@@ -1,75 +1,134 @@
 # Task Manager
 
-Simple full-stack todo app. React frontend, Express backend, tasks saved to a JSON file.
+A full-stack Task Manager application built with React, Vite, Node.js, and Express. Users can create, update, complete, and delete tasks through a clean and responsive interface.
 
-## Stack
+## Live Demo
 
-- **Frontend:** React, Vite, Tailwind, Axios
-- **Backend:** Node, Express, UUID, CORS
+**Frontend:**
+https://personal-task-manager-lake.vercel.app
 
-## Setup
+**Backend API:**
+https://personal-task-manager-ou9v.onrender.com/api/tasks
 
-You need Node 18+.
+## Features
 
-**Backend:**
+* Create new tasks
+* Edit existing tasks
+* Mark tasks as completed
+* Delete tasks
+* Filter tasks by status
+* Persistent storage using JSON file
+* Responsive user interface
+
+## Tech Stack
+
+### Frontend
+
+* React
+* Vite
+* Axios
+* Tailwind CSS
+
+### Backend
+
+* Node.js
+* Express.js
+* UUID
+* CORS
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/yuvraj-kandari/personal-task-manager.git
+cd personal-task-manager
+```
+
+### Backend Setup
+
 ```bash
 cd server
 npm install
 npm run dev
 ```
-Runs on http://localhost:5000
 
-**Frontend** (separate terminal):
+Backend runs on:
+
+```text
+http://localhost:5000
+```
+
+### Frontend Setup
+
+Open a new terminal:
+
 ```bash
 cd client
 npm install
 npm run dev
 ```
-Runs on http://localhost:5173
 
-Optional env: `PORT` (default 5000) for the API.
+Frontend runs on:
 
-## Project layout
-
+```text
+http://localhost:5173
 ```
-task-manager/
+
+## Project Structure
+
+```text
+personal-task-manager/
 ├── client/
-│   └── src/
-│       ├── App.jsx      # UI + state
-│       ├── api.js       # axios calls
-│       ├── main.jsx
-│       └── index.css
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── api.js
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── package.json
+│   └── vite.config.js
+│
 ├── server/
-│   ├── app.js           # API + file storage
-│   └── data/tasks.json
+│   ├── app.js
+│   ├── package.json
+│   └── data/
+│       └── tasks.json
+│
 └── README.md
 ```
 
-## API
+## API Endpoints
 
-| Method | Route | Description |
-|--------|-------|-------------|
-| GET | `/api/tasks` | List tasks (newest first) |
-| POST | `/api/tasks` | Create task |
-| PUT | `/api/tasks/:id` | Update task |
-| PATCH | `/api/tasks/:id/toggle` | Toggle completed |
-| DELETE | `/api/tasks/:id` | Delete task |
+| Method | Endpoint              | Description              |
+| ------ | --------------------- | ------------------------ |
+| GET    | /api/tasks            | Get all tasks            |
+| POST   | /api/tasks            | Create a new task        |
+| PUT    | /api/tasks/:id        | Update a task            |
+| PATCH  | /api/tasks/:id/toggle | Toggle completion status |
+| DELETE | /api/tasks/:id        | Delete a task            |
 
-Task shape:
+## Task Object
+
 ```json
 {
   "id": "uuid",
-  "title": "string",
-  "description": "string",
+  "title": "Task title",
+  "description": "Task description",
   "dueDate": "2026-06-15",
   "completed": false,
   "createdAt": "ISO date"
 }
 ```
 
-## Ideas for later
+## Future Improvements
 
-- User accounts
-- Real database
-- Due date reminders
-- Dark mode
+* User Authentication
+* Database Integration (MongoDB/PostgreSQL)
+* Task Categories
+* Due Date Notifications
+* Dark Mode
+* User Profiles
+
+## Author
+
+Yuvraj Kandari
